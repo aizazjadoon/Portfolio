@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Aizaz Khan | Web Developer & Digital Marketer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .input-field {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 16px 20px;
+      color: white;
+      width: 100%;
+      transition: all 0.3s;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #67e8f9;
+      box-shadow: 0 0 0 3px rgba(103, 232, 249, 0.2);
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-[#0B0C10] text-white overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 glass py-5">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <h3 class="text-2xl font-bold tracking-tight">AK</h3>
+        <span class="hidden sm:block w-px h-6 bg-gray-700"></span>
+        <a href="https://xavorin.tech" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 group">
+          <img src="images/xavorin-logo.png" alt="Xavorin Technologies logo" class="h-7 w-auto">
+          <span class="text-sm tracking-wide text-gray-300 group-hover:text-cyan-400 transition">Xavorin Technologies</span>
+        </a>
+      </div>
+      <div class="hidden md:flex gap-8 text-lg">
+        <a href="#about" class="hover:text-cyan-400 transition">About</a>
+        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+        <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
+        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with 3D Background -->
+  <section id="hero" class="min-h-screen relative flex items-center">
+    <canvas id="heroCanvas" class="absolute inset-0"></canvas>
+
+    <div class="max-w-6xl mx-auto px-6 text-center relative z-10 pt-20">
+      <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tighter">Muhammad Aizaz Khan</h1>
+      <p class="text-3xl md:text-4xl text-cyan-400 mb-4">Web Developer & SEO Experts</p>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
+        2 Years of Crafting High-Impact SEO Experiences
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="#projects" class="px-10 py-5 bg-white text-black font-semibold rounded-2xl text-lg hover:scale-105 transition">
+          Explore My Work
+        </a>
+        <a href="#contact" class="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl text-lg hover:bg-cyan-400 hover:text-black transition">
+          Let's Collaborate
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+      <p class="text-sm tracking-widest mb-3">SCROLL TO BEGIN JOURNEY</p>
+      <i class="fa-solid fa-chevron-down text-3xl animate-bounce"></i>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-20 border-t border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+      <div class="stat-item"><h3 class="text-6xl font-bold text-cyan-400 count" data-target="20">0</h3><p>Completed Projects</p></div>
+      <div class="stat-item"><h3 class="text-6xl font-bold text-cyan-400 count" data-target="18">0</h3><p>Happy Clients</p></div>
+      <div class="stat-item"><h3 class="text-6xl font-bold text-cyan-400 count" data-target="3">0</h3><p>Ongoing Projects</p></div>
+      <div class="stat-item"><h3 class="text-6xl font-bold text-cyan-400 count" data-target="2">0</h3><p>Years Experience</p></div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">About Me</h2>
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-lg leading-relaxed text-gray-300">
+            I'm Muhammad Aizaz Khan, a passionate Web Developer and SEO Expert with over 2 years of experience.
+            I specialize in building modern, high-converting websites and running data-driven marketing campaigns that deliver real results.
+          </p>
+        </div>
+        <div class="glass rounded-3xl p-8 text-center">
+          <h4 class="text-cyan-400 text-xl mb-4">Currently Available For</h4>
+          <p class="text-2xl">Freelance • Full-time • Collaboration</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 bg-black/40">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-4">Featured Projects</h2>
+      <p class="text-center text-gray-400 text-lg mb-16">Web Development &amp; SEO — building fast, search-optimized sites that convert</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Live client project -->
+        <a href="https://6a3bb477377d7.site123.me/" target="_blank" rel="noopener noreferrer" class="glass rounded-3xl overflow-hidden group hover:scale-105 transition block">
+          <div class="h-64 relative overflow-hidden">
+            <img src="imagesbusiness-website.jpeg" alt="Business Website project" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+              <i class="fa-solid fa-arrow-up-right-from-square text-4xl text-white"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cyan-400 tracking-wider uppercase">Web Development</span>
+            <h3 class="text-2xl font-semibold mb-2 mt-1">Business Website</h3>
+            <p class="text-gray-400">Custom-built responsive business website with clean UX and on-page SEO foundations.</p>
+            <p class="text-cyan-400 text-sm mt-4 group-hover:underline">Visit Live Site →</p>
+          </div>
+        </a>
+
+        <div class="glass rounded-3xl overflow-hidden group hover:scale-105 transition">
+          <div class="h-64 overflow-hidden">
+            <img src="imagesecommerce-platform.jpeg" alt="E-Commerce Platform project" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cyan-400 tracking-wider uppercase">Web Development</span>
+            <h3 class="text-2xl font-semibold mb-2 mt-1">E-Commerce Platform</h3>
+            <p class="text-gray-400">Modern Shopify store with 300% ROI</p>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl overflow-hidden group hover:scale-105 transition">
+          <div class="h-64 overflow-hidden">
+            <img src="Local SEO (2).jpeg" alt="Local SEO Campaign project" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-emerald-400 tracking-wider uppercase">SEO</span>
+            <h3 class="text-2xl font-semibold mb-2 mt-1">Local SEO Campaign</h3>
+            <p class="text-gray-400">Ranked a service business on page 1 for core local keywords, tripling organic leads.</p>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl overflow-hidden group hover:scale-105 transition">
+          <div class="h-64 overflow-hidden">
+            <img src="SAAS Landing Page.jpeg" alt="SaaS Landing Page project" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cyan-400 tracking-wider uppercase">Web Development</span>
+            <h3 class="text-2xl font-semibold mb-2 mt-1">SaaS Landing Page</h3>
+            <p class="text-gray-400">High-conversion landing page built for speed, with a 95+ Lighthouse performance score.</p>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl overflow-hidden group hover:scale-105 transition">
+          <div class="h-64 overflow-hidden">
+            <img src="Technical SEO.jpeg" alt="Technical SEO Audit project" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-emerald-400 tracking-wider uppercase">SEO</span>
+            <h3 class="text-2xl font-semibold mb-2 mt-1">Technical SEO Audit &amp; Fix</h3>
+            <p class="text-gray-400">Resolved crawl, speed, and schema issues, doubling organic search traffic in 90 days.</p>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl overflow-hidden group hover:scale-105 transition">
+          <div class="h-64 overflow-hidden">
+            <img src="Portfolio & blog CMS.jpeg" alt="Portfolio and Blog CMS project" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cyan-400 tracking-wider uppercase">Web Development</span>
+            <h3 class="text-2xl font-semibold mb-2 mt-1">Portfolio &amp; Blog CMS</h3>
+            <p class="text-gray-400">Custom content-managed site with structured data for rich search results.</p>
+          </div>
+        </div>
+        <!-- Duplicate cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">Experience</h2>
+      <div class="space-y-12">
+        <div class="glass rounded-3xl p-8">
+          <h4 class="text-cyan-400">2023 — Present</h4>
+          <h3 class="text-2xl font-semibold">Freelance Web Developer & Digital Marketer</h3>
+          <p class="text-gray-400 mt-4">Delivered 20+ projects with focus on performance and conversion optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-12">Get In Touch</h2>
+      <form id="contactForm" class="glass rounded-3xl p-10 space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <input type="text" id="name" placeholder="Your Name" required class="input-field">
+          <input type="email" id="email" placeholder="Your Email" required class="input-field">
+        </div>
+          <input type="tel" id="phone" placeholder="Contact Number" required class="input-field">
+        <textarea id="message" rows="6" placeholder="Tell me about your project..." required class="input-field"></textarea>
+
+        <button type="submit" class="w-full py-5 bg-cyan-400 text-black font-bold text-xl rounded-2xl hover:bg-cyan-300 transition">
+          Send Message
+        </button>
+      </form>
+
+      <div class="text-center mt-10 space-y-2 text-gray-400">
+        <p><a href="xavorintechnologies@gmail.com" class="hover:text-cyan-400">xavorintechnologies@gmail.com</a></p>
+        <p><a href="tel:+923159935383" class="hover:text-cyan-400">Contact Us: +92 315 9935383</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Register GSAP ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Three.js Hero Background
+    let scene, camera, renderer;
+    let particles = [];
+
+    function initHeroCanvas() {
+      const canvas = document.getElementById('heroCanvas');
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // Particle field — each dot has a "home" position it drifts back to,
+      // like it's floating on water that ripples when disturbed.
+      const COUNT = 900;
+      const home = new Float32Array(COUNT * 3);
+      const positions = new Float32Array(COUNT * 3);
+      const velocities = new Float32Array(COUNT * 3);
+      const colors = new Float32Array(COUNT * 3);
+
+      for (let i = 0; i < COUNT; i++) {
+        const x = Math.random() * 220 - 110;
+        const y = Math.random() * 220 - 110;
+        const z = Math.random() * 200 - 100;
+        home[i * 3] = x; home[i * 3 + 1] = y; home[i * 3 + 2] = z;
+        positions[i * 3] = x; positions[i * 3 + 1] = y; positions[i * 3 + 2] = z;
+
+        const t = Math.random();
+        colors[i * 3] = 0.25 + t * 0.35;
+        colors[i * 3 + 1] = 0.7 + t * 0.25;
+        colors[i * 3 + 2] = 1;
+      }
+
+      const geometry = new THREE.BufferGeometry();
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+      const material = new THREE.PointsMaterial({
+        size: 1.1,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.8,
+        sizeAttenuation: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      });
+
+      const particleSystem = new THREE.Points(geometry, material);
+      scene.add(particleSystem);
+      particles.push(particleSystem);
+
+      camera.position.z = 80;
+
+      // ---- Cursor tracking, projected into the particle field's 3D space ----
+      const raycaster = new THREE.Raycaster();
+      const ndc = new THREE.Vector2(9999, 9999);
+      const interactionPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+      const cursorWorld = new THREE.Vector3();
+      let cursorActive = false;
+
+      function setCursorFromClient(clientX, clientY) {
+        const rect = canvas.getBoundingClientRect();
+        ndc.x = ((clientX - rect.left) / rect.width) * 2 - 1;
+        ndc.y = -((clientY - rect.top) / rect.height) * 2 + 1;
+        raycaster.setFromCamera(ndc, camera);
+        raycaster.ray.intersectPlane(interactionPlane, cursorWorld);
+        cursorActive = true;
+      }
+
+      window.addEventListener('mousemove', (e) => setCursorFromClient(e.clientX, e.clientY));
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches.length) setCursorFromClient(e.touches[0].clientX, e.touches[0].clientY);
+      }, { passive: true });
+      document.addEventListener('mouseout', (e) => { if (!e.relatedTarget) cursorActive = false; });
+
+      // Ripple physics tuning
+      const RADIUS = 32;          // how far the "water" disturbance reaches
+      const REPEL_STRENGTH = 3.4; // how hard dots get pushed away from the cursor
+      const SPRING = 0.02;        // pull back toward home position
+      const DAMPING = 0.9;        // settles the motion so it doesn't jitter forever
+
+      function animate() {
+        requestAnimationFrame(animate);
+        particleSystem.rotation.y += 0.0004;
+
+        const posAttr = geometry.attributes.position;
+        const arr = posAttr.array;
+
+        for (let i = 0; i < COUNT; i++) {
+          const ix = i * 3, iy = i * 3 + 1, iz = i * 3 + 2;
+
+          let fx = (home[ix] - arr[ix]) * SPRING;
+          let fy = (home[iy] - arr[iy]) * SPRING;
+          let fz = (home[iz] - arr[iz]) * SPRING;
+
+          if (cursorActive) {
+            const dx = arr[ix] - cursorWorld.x;
+            const dy = arr[iy] - cursorWorld.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < RADIUS) {
+              const falloff = 1 - dist / RADIUS;
+              const push = falloff * falloff * REPEL_STRENGTH;
+              const dist_ = dist || 0.001;
+              fx += (dx / dist_) * push;
+              fy += (dy / dist_) * push;
+              fz += push * 0.6; // ripple bulges toward the viewer, like water displaced by a touch
+            }
+          }
+
+          velocities[ix] = (velocities[ix] + fx) * DAMPING;
+          velocities[iy] = (velocities[iy] + fy) * DAMPING;
+          velocities[iz] = (velocities[iz] + fz) * DAMPING;
+
+          arr[ix] += velocities[ix];
+          arr[iy] += velocities[iy];
+          arr[iz] += velocities[iz];
+        }
+
+        posAttr.needsUpdate = true;
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+
+    // Counter Animation
+    function animateCounters() {
+      document.querySelectorAll('.count').forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'));
+        let count = 0;
+        const step = target / 50;
+        const interval = setInterval(() => {
+          count += step;
+          if (count >= target) {
+            el.textContent = target + (target === 3 ? '+' : '');
+            clearInterval(interval);
+          } else {
+            el.textContent = Math.floor(count);
+          }
+        }, 40);
+      });
+    }
+
+    // Form
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been received. I'll reply soon.");
+      this.reset();
+    });
+
+    // Resize handler
+    window.addEventListener('resize', () => {
+      if (renderer) {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+    });
+
+    // Initialize everything
+    window.onload = () => {
+      initHeroCanvas();
+      animateCounters();
+
+      // GSAP Animations
+      gsap.from("nav", { y: -100, opacity: 0, duration: 1 });
+      gsap.utils.toArray('.stat-item').forEach((el, i) => {
+        gsap.from(el, {
+          scrollTrigger: el,
+          y: 60,
+          opacity: 0,
+          duration: 0.8,
+          delay: i * 0.1
+        });
+      });
+    };
+  </script>
+</body>
+</html>
