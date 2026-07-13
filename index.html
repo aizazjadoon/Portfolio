@@ -221,22 +221,19 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-24">
+<!-- Contact -->
+<section id="contact" class="py-24">
     <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-12">Get In Touch</h2>
-      <form id="contactForm" class="glass rounded-3xl p-10 space-y-6" action="https://formspree.io/f/xzdnbdwd"
-  method="POST">
-        <div class="grid md:grid-cols-2 gap-6">
-          <input type="text" id="name" placeholder="Your Name" required class="input-field">
-          <input type="email" id="email" placeholder="Your Email" required class="input-field">
-        </div>
-          <input type="tel" id="phone" placeholder="Contact Number" required class="input-field">
-        <textarea id="message" rows="6" placeholder="Tell me about your project..." required class="input-field"></textarea>
-
-        <button type="submit" class="w-full py-5 bg-cyan-400 text-black font-bold text-xl rounded-2xl hover:bg-cyan-300 transition">
-          Send Message
-        </button>
-      </form>
+        <h2 class="text-5xl font-bold text-center mb-12">Get In Touch</h2>
+        <form id="contactForm" class="glass rounded-3xl p-10 space-y-6" action="https://formspree.io/f/xzdnbdwd" method="POST">
+            <div class="grid md:grid-cols-2 gap-6">
+                <input type="text" id="name" name="name" placeholder="Your Name" required class="input-field">
+                <input type="email" id="email" name="email" placeholder="Your Email" required class="input-field">
+            </div>
+            <input type="tel" id="phone" name="phone" placeholder="Contact Number" required class="input-field">
+            <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required class="input-field"></textarea>
+            <button type="submit" class="w-full py-5 bg-cyan-400 text-black font-bold text-xl rounded-2xl hover:bg-cyan-300 transition">Send Message</button>
+        </form>
 
       <div class="text-center mt-10 space-y-2 text-gray-400">
         <p><a href="xavorintechnologies@gmail.com" class="hover:text-cyan-400">xavorintechnologies@gmail.com</a></p>
